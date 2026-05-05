@@ -1,119 +1,125 @@
 "use client";
 
-import {
-  FileText,
-  Download,
-  Briefcase,
-  Mail,
-  Github,
-  Linkedin,
-} from "lucide-react";
+import Link from "next/link";
+import { FileText, Download, Briefcase, Mail, GitHub } from "lucide-react";
 
 export default function ResumePage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-24">
-      {/* HEADER */}
-      <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold">Resume</h1>
+    <div className="min-h-screen px-6 py-16 max-w-7xl mx-auto">
+      {/* Title */}
+      <div className="mb-10">
+        <h1 className="text-4xl font-bold text-white">Resume</h1>
+        <p className="text-gray-400 mt-2">
+          AI + Systems Engineer focused on real-time, scalable applications.
+        </p>
       </div>
 
-      {/* LAYOUT */}
-      <div className="grid lg:grid-cols-[2.5fr_1fr] gap-10">
-        {/* LEFT — RESUME VIEWER */}
-        <div className="border border-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <iframe
-            src="/Sai_Naman_Gangiredla_Resume.pdf"
-            className="w-full h-[85vh]"
-          />
+      {/* 70/30 Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
+        {/* LEFT (70%) → PDF Viewer */}
+        <div className="lg:col-span-7">
+          <div className="border border-gray-800 rounded-xl overflow-hidden h-[75vh] bg-black">
+            <iframe
+              src="/resume.pdf"
+              className="w-full h-full"
+              title="Resume"
+            />
+          </div>
         </div>
 
-        {/* RIGHT — SIDEBAR */}
-        <div className="space-y-6 lg:sticky lg:top-24 h-fit">
-          {/* PROFILE */}
-          <div className="border border-gray-800 rounded-xl p-5 bg-gray-900/40">
-            <p className="text-xs text-gray-500 mb-2 tracking-wide">PROFILE</p>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              AI + Systems Engineer focused on building real-time, scalable
-              applications that remain reliable under real-world complexity.
-            </p>
-          </div>
-
-          {/* ACTIONS */}
+        {/* RIGHT (30%) → Info Panel */}
+        <div className="lg:col-span-3 space-y-6">
+          {/* Quick Actions */}
           <div className="border border-gray-800 rounded-xl p-5">
-            <p className="text-xs text-gray-500 mb-4 tracking-wide">ACTIONS</p>
+            <h2 className="text-white font-semibold mb-4">Quick Actions</h2>
 
             <div className="flex flex-col gap-3">
-              {/* PRIMARY */}
               <a
-                href="/Sai_Naman_Gangiredla_Resume.pdf"
+                href="/resume.pdf"
                 download
-                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition font-medium"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
               >
                 <Download size={16} />
                 Download Resume
               </a>
 
-              {/* SECONDARY */}
-              <a
-                href="/Sai_Naman_Gangiredla_Resume.pdf"
-                target="_blank"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
-              >
-                <FileText size={16} />
-                View Resume
-              </a>
-
-              <a
-                href="/projects"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
+              <Link
+                href="/work"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
               >
                 <Briefcase size={16} />
                 View Work
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/contact"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
               >
                 <Mail size={16} />
                 Contact
-              </a>
+              </Link>
 
               <a
                 href="https://github.com/Sai-Naman-Gangiredla"
                 target="_blank"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
               >
-                <Github size={16} />
-                GitHub ↗
+                <GitHub size={16} />
+                GitHub
               </a>
 
+              {/* LinkedIn SVG */}
               <a
-                href="https://www.linkedin.com/in/sainamangangiredla/"
+                href="https://www.linkedin.com/"
                 target="_blank"
-                className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
               >
-                <Linkedin size={16} />
-                LinkedIn ↗
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8h4V24h-4V8zm7.5 0h3.6v2.16h.05c.5-.95 1.7-1.95 3.5-1.95 3.75 0 4.45 2.47 4.45 5.68V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.26 2.21-3.26 4.5V24h-4V8z" />
+                </svg>
+                LinkedIn
               </a>
             </div>
           </div>
 
-          {/* HIGHLIGHTS */}
+          {/* Summary */}
           <div className="border border-gray-800 rounded-xl p-5">
-            <p className="text-xs text-gray-500 mb-3 tracking-wide">
-              HIGHLIGHTS
-            </p>
+            <h2 className="text-white font-semibold mb-4">Summary</h2>
 
-            <div className="space-y-2 text-sm text-gray-300 leading-relaxed">
-              <p>• Real-time system design</p>
-              <p>• AI + automation pipelines</p>
-              <p>• Scalable architecture thinking</p>
-              <p>• Full-stack development</p>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              I build systems that work under real-world conditions — not just
+              demos. Focused on scalability, reliability, and intelligent
+              automation.
+            </p>
+          </div>
+
+          {/* Skills */}
+          <div className="border border-gray-800 rounded-xl p-5">
+            <h2 className="text-white font-semibold mb-4">Focus Areas</h2>
+
+            <div className="flex flex-wrap gap-2 text-xs text-gray-300">
+              <span className="px-2 py-1 border border-gray-700 rounded">
+                Real-time Systems
+              </span>
+              <span className="px-2 py-1 border border-gray-700 rounded">
+                AI + Automation
+              </span>
+              <span className="px-2 py-1 border border-gray-700 rounded">
+                Scalable Architecture
+              </span>
+              <span className="px-2 py-1 border border-gray-700 rounded">
+                Full Stack
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
