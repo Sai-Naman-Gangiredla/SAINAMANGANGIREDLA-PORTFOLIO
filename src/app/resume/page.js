@@ -1,11 +1,13 @@
 "use client";
 
-import FileText from "lucide-react/dist/esm/icons/file-text";
-import Download from "lucide-react/dist/esm/icons/download";
-import Briefcase from "lucide-react/dist/esm/icons/briefcase";
-import Mail from "lucide-react/dist/esm/icons/mail";
-import GithubIcon from "lucide-react/dist/esm/icons/github";
-import LinkedinIcon from "lucide-react/dist/esm/icons/linkedin";
+import {
+  FileText,
+  Download,
+  Briefcase,
+  Mail,
+  Github,
+  Linkedin,
+} from "lucide-react";
 
 export default function ResumePage() {
   return (
@@ -82,7 +84,7 @@ export default function ResumePage() {
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
               >
-                <GithubIcon size={16} />
+                <Github size={16} />
                 GitHub ↗
               </a>
 
@@ -91,7 +93,7 @@ export default function ResumePage() {
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg hover:border-blue-500 transition"
               >
-                <LinkedinIcon size={16} />
+                <Linkedin size={16} />
                 LinkedIn ↗
               </a>
             </div>
