@@ -11,12 +11,12 @@ const certificates = [
   },
   {
     title: "Google Prompting Essentials",
-    org: "Cousera-Google"
+    org: "Cousera-Google",
     file: "/certificates/Google-Prompting-Essentials.pdf",
   },
   {
     title: "Google-AI-Essentials",
-    org: "Coursera-Google"
+    org: "Coursera-Google",
     file: "/certificates/Google-AI-Essentials.pdf",
   },
   {
