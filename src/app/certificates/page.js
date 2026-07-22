@@ -11,7 +11,7 @@ const certificates = [
   },
   {
     title: "Google Prompting Essentials",
-    org: "Cousera-Google",
+    org: "Coursera-Google",
     file: "/certificates/Google-Prompting-Essentials.pdf",
   },
   {
