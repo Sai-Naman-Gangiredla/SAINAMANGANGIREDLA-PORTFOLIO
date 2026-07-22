@@ -10,6 +10,16 @@ const certificates = [
     file: "/certificates/Automation-AI-Accelerator-From-Co-pilot-to-Autonomous-Agent.pdf",
   },
   {
+    title: "Google Prompting Essentials",
+    org: "Cousera-Google"
+    file: "/certificates/Google-Prompting-Essentials.pdf",
+  },
+  {
+    title: "Google-AI-Essentials",
+    org: "Coursera-Google"
+    file: "/certificates/Google-AI-Essentials.pdf",
+  },
+  {
     title: "Partnering with AI in the Workplace",
     org: "Datacom",
     file: "/certificates/Partnering-with-AI-in-the-Workplace–Forage.pdf",
